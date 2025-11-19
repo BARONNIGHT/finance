@@ -1,0 +1,5 @@
+{
+  "name": "FINPRO - Catatan Keuangan",
+  "description": "Aplikasi pencatat keuangan harian dengan fitur ekspor PDF laporan rapi dan analisis cerdas menggunakan Gemini AI.",
+  "requestFramePermissions": []
+}
