@@ -62,14 +62,7 @@ const AIAdvisor: React.FC<AIAdvisorProps> = ({ transactions }) => {
         {advice && !loading && (
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-sm leading-relaxed shadow-inner text-indigo-50">
                 <div className="prose prose-invert prose-sm max-w-none">
-                     {/* Simple markdown rendering for bold/lists */}
-                    {advice.split('\n').map((line, i) => {
-                         if (line.startsWith('##')) return <h3 key={i} className="text-lg font-bold text-white mt-4 mb-2">{line.replace(/#/g, '')}</h3>
-                         if (line.startsWith('**')) return <p key={i} className="font-bold mb-2">{line.replace(/\*\*/g, '')}</p>
-                         if (line.startsWith('-')) return <li key={i} className="ml-4 mb-1 list-disc">{line.replace('-', '')}</li>
-                         if (line.match(/^\d\./)) return <li key={i} className="ml-4 mb-1 list-decimal">{line.replace(/^\d\./, '')}</li>
-                         return <p key={i} className="mb-2">{line}</p>
-                    })}
+                     <ReactMarkdown>{advice}</ReactMarkdown>
                 </div>
                 <button
                     onClick={handleAnalyze}
